@@ -1,0 +1,336 @@
+body {
+  background: linear-gradient(to top, #241e4e, #573b8a, #9b59b6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 300px;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 35px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: white;
+}
+
+.options a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ffeb3b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffc107;
+}
+
+p {
+  margin-top: 10px;
+  color: white;
+}
+
+p a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+
+
+/* RegistroUsuario.css */
+
+.registro-unique-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.registro-unique-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.registro-unique-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.registro-unique-form-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.registro-unique-form-control {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.registro-unique-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.registro-unique-btn:hover {
+  background-color: #218838;
+}
+
+
+
+
+.usuario-edit-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+
+
+.usuario-list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.usuario-list-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.usuario-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.usuario-list-table th, .usuario-list-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.usuario-list-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.usuario-list-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.usuario-list-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.usuario-list-table th, .usuario-list-table td {
+  padding: 12px;
+}
+
+.usuario-list-table td button {
+  margin-right: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+
+
+.registro-usuario-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registro-usuario-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.registro-usuario-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.registro-usuario-form input,
+.registro-usuario-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
