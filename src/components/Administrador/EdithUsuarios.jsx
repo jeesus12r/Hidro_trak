@@ -43,40 +43,37 @@ const UsuarioEdit = () => {
   };
 
   return (
-    <form className="usuario-edit-form" onSubmit={handleSubmit}>
-      <div className="form-row">
-        <div className="form-group">
-          <label className="form-label">Nombre</label>
-          <input type="text" className="form-input" name="nombre" placeholder="Nombre" value={usuario.nombre} onChange={handleChange} required />
+    <div className="usuario-edit__container">
+      <form className="usuario-edit__form" onSubmit={handleSubmit}>
+        <div className="usuario-edit__form-row">
+          <div className="usuario-edit__form-group">
+            <label className="usuario-edit__form-label">Nombre</label>
+            <input type="text" className="usuario-edit__form-input" name="nombre" placeholder="Nombre" value={usuario.nombre} onChange={handleChange} required />
+          </div>
+          <div className="usuario-edit__form-group">
+            <label className="usuario-edit__form-label">Email</label>
+            <input type="email" className="usuario-edit__form-input" name="email" placeholder="Email" value={usuario.email} onChange={handleChange} required />
+          </div>
         </div>
-        <div className="form-group">
-          <label className="form-label">Email</label>
-          <input type="email" className="form-input" name="email" placeholder="Email" value={usuario.email} onChange={handleChange} required />
+        <div className="usuario-edit__form-row">
+          <div className="usuario-edit__form-group">
+            <label className="usuario-edit__form-label">Teléfono</label>
+            <input type="text" className="usuario-edit__form-input" name="telefono" placeholder="Teléfono" value={usuario.telefono} onChange={handleChange} />
+          </div>
+          <div className="usuario-edit__form-group">
+            <label className="usuario-edit__form-label">Dirección</label>
+            <input type="text" className="usuario-edit__form-input" name="direccion_completa" placeholder="Dirección Completa" value={usuario.direccion_completa} onChange={handleChange} />
+          </div>
         </div>
-      </div>
-      <div className="form-row">
-        <div className="form-group">
-          <label className="form-label">Teléfono</label>
-          <input type="text" className="form-input" name="telefono" placeholder="Teléfono" value={usuario.telefono} onChange={handleChange} />
+        <div className="usuario-edit__form-row">
+         
         </div>
-        <div className="form-group">
-          <label className="form-label">Dirección</label>
-          <input type="text" className="form-input" name="direccion_completa" placeholder="Dirección Completa" value={usuario.direccion_completa} onChange={handleChange} />
+        <div className="usuario-edit__button-container">
+          <button className="usuario-edit__btn usuario-edit__btn-primary" type="submit">Actualizar Usuario</button>
+          <button className="usuario-edit__btn usuario-edit__btn-secondary" type="button" onClick={handleCancel}>Cancelar</button>
         </div>
-      </div>
-      <div className="form-row">
-        <div className="form-group">
-          <label className="form-label">Rol</label>
-          <select className="form-select" name="rol" value={usuario.rol} onChange={handleChange} required>
-            <option value="usuario">Usuario</option>
-            <option value="admin">Administrador</option>
-            <option value="tecnico">Técnico</option>
-          </select>
-        </div>
-      </div>
-      <button className="btn btn-primary" type="submit">Actualizar Usuario</button>
-      <button className="btn btn-secondary" type="button" onClick={handleCancel}>Cancelar</button>
-    </form>
+      </form>
+    </div>
   );
 };
 

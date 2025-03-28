@@ -45,8 +45,7 @@ const UsuarioList = () => {
               <td>{usuario.fecha_registro}</td>
               <td>{usuario.activo ? "Sí" : "No"}</td>
               <td>
-                <Link to={`/edit/usuario/${usuario.id}`}><button type="button" className="btn btn-success">Editar</button></Link>
-                <button type="button" className="btn btn-danger" onClick={() => handleDelete(usuario.id)}>Eliminar</button>
+                
               </td>
             </tr>
           ))}
