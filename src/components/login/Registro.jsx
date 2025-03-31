@@ -125,13 +125,13 @@ const RegistroUsuario = () => {
     <form className="registro-usuario-form" onSubmit={handleSubmit}>
       <h2>Registro de Usuario</h2>
       {error && <p className="error-message">{error}</p>}
-
+  
       <label>Nombre</label>
       <input type="text" name="nombre" value={usuario.nombre} onChange={handleChange} required />
-
+  
       <label>Email</label>
       <input type="email" name="email" value={usuario.email} onChange={handleChange} required />
-
+  
       <label>Contraseña</label>
       <div className="password-container">
         <input
@@ -145,20 +145,20 @@ const RegistroUsuario = () => {
           {showPassword ? <FaEyeSlash /> : <FaEye />}
         </button>
       </div>
-
+  
       <label>Teléfono</label>
       <input type="text" name="telefono" value={usuario.telefono} onChange={handleChange} />
-
+  
       <label>Dirección</label>
       <input type="text" name="direccion_completa" value={usuario.direccion_completa} onChange={handleChange} />
-
+  
       <label>Rol</label>
       <select name="rol" value={usuario.rol} onChange={handleChange} required>
         <option value="usuario">Usuario</option>
         <option value="admin">Administrador</option>
         <option value="tecnico">Técnico</option>
       </select>
-
+  
       {/* Solo mostrar el campo de contraseña del rol si el usuario elige admin o técnico */}
       {(usuario.rol === "admin" || usuario.rol === "tecnico") && (
         <>
@@ -177,51 +177,52 @@ const RegistroUsuario = () => {
           </div>
         </>
       )}
-
+  
       {/* Mostrar campos adicionales si el usuario elige "usuario" */}
       {usuario.rol === "usuario" && (
         <>
           <h3>Información del Dispositivo</h3>
           <label>Nombre del Dispositivo</label>
           <input type="text" name="nombre" value={dispositivo.nombre} onChange={handleDispositivoChange} required />
-
+  
           <label>Tipo</label>
           <input type="text" name="tipo" value={dispositivo.tipo} onChange={handleDispositivoChange} required />
-
+  
           <label>Ubicación</label>
           <input type="text" name="ubicacion" value={dispositivo.ubicacion} onChange={handleDispositivoChange} />
-
+  
           <label>Estado</label>
           <input type="text" name="estado" value={dispositivo.estado} onChange={handleDispositivoChange} />
-
+  
           <h3>Información del Registro</h3>
           <label>Acción</label>
           <input type="text" name="accion" value={registro.accion} onChange={handleRegistroChange} />
-
+  
           <label>Detalles</label>
           <textarea name="detalles" value={registro.detalles} onChange={handleRegistroChange}></textarea>
-
+  
           <h3>Información del Sensor</h3>
           <label>Tipo del Sensor</label>
           <input type="text" name="tipo" value={sensor.tipo} onChange={handleSensorChange} required />
-
+  
           <label>Unidad de Medida</label>
           <input type="text" name="unidad_medida" value={sensor.unidad_medida} onChange={handleSensorChange} />
-
+  
           <label>Rango Mínimo</label>
           <input type="number" name="rango_min" value={sensor.rango_min} onChange={handleSensorChange} />
-
+  
           <label>Rango Máximo</label>
           <input type="number" name="rango_max" value={sensor.rango_max} onChange={handleSensorChange} />
         </>
       )}
-
+  
       <div className="button-container">
         <button type="submit">Registrar</button>
         <button type="button" onClick={handleCancel}>Cancelar</button>
       </div>
     </form>
   );
+  
 };
 
 export default RegistroUsuario;

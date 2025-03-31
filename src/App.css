@@ -1,4 +1,5 @@
 /*login*/
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,284 +15,344 @@ body {
   align-items: center;
   min-height: 100vh;
   background: url('./components/assets/fondo.jpg');
-  background-size:cover ;
+  background-size: cover;
   background-position: center;
-  }   
-
-  .wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    backdrop-filter: blur(30px);
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
-  }
-  
-  .wrapper h1 {
-    font-size: 36px;
-    text-align: center;
-  }
-  
-  .wrapper .input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-  }
-  
-  .input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-  }
-  
-  .input-box input::placeholder {
-    color: #fff;
-  }
-  
-  .input-box .icon {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-  }
-  
-  .wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
-  }
-  
-  .remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 4px;
-  }
-  
-  .remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .remember-forgot a:hover {
-    text-decoration: underline;
-  }
-  
-  .wrapper button {
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 700;
-  }
-  
-  .wrapper .register-link {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
-  }
-  
-  .register-link p a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .register-link p a:hover {
-    text-decoration: underline;
-  }
-  
-  .password-wrapper {
-    display: flex;
-    align-items: center;
-  }
-  
-  .password-wrapper .toggle-password {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px; /* Ajusta este valor según sea necesario */
-  }
-  
-  
-  
-  
-
-/*fomularios*/
-.registro-usuario-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f7f7f7;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.registro-usuario-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.registro-usuario-form label {
-  display: block;
-  margin-bottom: 5px;
-  color: #666;
-}
-
-.registro-usuario-form input, 
-.registro-usuario-form select {
+/* Wrapper */
+.wrapper {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.registro-usuario-form button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #2fe2fd;
+  max-width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
   color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+  border-radius: 10px;
+  padding: 30px 20px;
 }
 
-.registro-usuario-form button:hover {
-  background: #1cc3e4;
-}
-
-.error-message {
-  color: red;
-  margin-bottom: 15px;
+.wrapper h1 {
+  font-size: 2rem;
   text-align: center;
 }
 
-.button-container {
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 1rem;
+  color: #fff;
+  padding: 0 45px 0 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+/* Remember and Forgot */
+.wrapper .remember-forgot {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
-.button-container button {
-  width: 48%;
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 4px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.wrapper button {
+  width: 100%;
   height: 45px;
-  background: #3cebf4;
+  background: #fff;
   border: none;
   outline: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   color: #333;
+  font-weight: bold;
+}
+
+.wrapper .register-link {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper .toggle-password {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .wrapper h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-box input {
+    font-size: 0.95rem;
+    padding: 0 40px 0 15px;
+  }
+
+  .wrapper button {
+    font-size: 0.95rem;
+  }
+
+  .wrapper .remember-forgot {
+    font-size: 0.8rem;
+  }
+
+  .register-link {
+    font-size: 0.8rem;
+  }
+}
+
+/*fomularios*/
+/* Estilo principal del formulario */
+.registro-usuario-form {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Título del formulario */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Contenedor del formulario en grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Más de 2 columnas: 3 columnas */
+  gap: 20px; /* Espaciado entre las columnas y filas */
+}
+
+/* Cada celda del grid */
+.grid-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Estilo para inputs, selects y botones */
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Enfocar inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Contenedor para la contraseña (incluye botón de mostrar/ocultar) */
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  flex-grow: 1;
+}
+
+.password-container button {
+  margin-left: 10px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.password-container button:hover {
+  color: #0056b3;
+}
+
+/* Estilo de los botones de acción */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/*Navbar*/
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1px 1%;
+  background: rgba(241, 38, 156, 0.604);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 32px;
+  color: #fff;
   font-weight: 700;
 }
 
-.button-container button[type="button"] {
-  background: #f44336; /* Rojo para el botón de cancelar */
-  color: #fff;
+.logo-image {
+  width: 80px; /* Ajusta el tamaño del logo según tus necesidades */
+  height: auto;
+  border-radius: 80px;
 }
 
-/*Navbar*/
-a{
-  text-decoration: none;
-  }
-  
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1px 1%;
-    background: rgba(241, 38, 156, 0.604);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-  }
-  
-  .logo {
-    font-size: 32px;
-    color: #fff;
-    font-weight: 700;
-  }
-  
-  .logo-image {
-    width: 80px; /* Ajusta el tamaño del logo según tus necesidades */
-    height: auto;
-    border-radius: 80px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar a {
-    position: relative;
-    font-size: 25 px;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 60px;
-  }
-  
-  .navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: .3s;
-  }
-  
-  .navbar a:hover::before {
-    width: 100%;
-  }
-  
-  /*boton de navegacion*/
-  .styled-button {
-    padding: 12px 24px;
-    background-color: rgba(241, 38, 156, 0); /* Green */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .styled-button:hover {
-    background-color: #46b5d7;
-    transform: scale(1.05);
-  }
-  
+.navbar {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los enlaces se acomoden automáticamente */
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* DispositivoList.css */
-/* Prefix 'dev-' usado para evitar conflictos con otros estilos */
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin: 10px;
+}
 
-/* Contenedor principal */
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.styled-button {
+  padding: 12px 24px;
+  background-color: rgba(241, 38, 156, 0); /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.styled-button:hover {
+  background-color: #46b5d7;
+  transform: scale(1.05);
+}
+
 .dev-dispositivo-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1200px;
@@ -300,7 +361,6 @@ a{
   color: #333;
 }
 
-/* Estilos para el encabezado y acciones */
 .dev-header-actions {
   display: flex;
   justify-content: space-between;
@@ -317,15 +377,15 @@ a{
   color: #2c3e50;
 }
 
-/* Estilos para el cuadro de búsqueda */
 .dev-search-container {
   margin-bottom: 20px;
 }
 
 .dev-search-box {
   display: flex;
+  flex-wrap: wrap; /* Para que los elementos de búsqueda se acomoden dinámicamente */
   gap: 10px;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .dev-search-input {
@@ -343,7 +403,6 @@ a{
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-/* Estilos para botones */
 .dev-btn {
   display: inline-flex;
   align-items: center;
@@ -372,43 +431,6 @@ a{
   background-color: #2980b9;
 }
 
-.dev-btn-search {
-  background-color: #2ecc71;
-  color: white;
-}
-
-.dev-btn-search:hover:not(:disabled) {
-  background-color: #27ae60;
-}
-
-.dev-btn-edit {
-  background-color: #f39c12;
-  color: white;
-  margin-right: 5px;
-}
-
-.dev-btn-edit:hover {
-  background-color: #e67e22;
-}
-
-.dev-btn-delete {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.dev-btn-delete:hover {
-  background-color: #c0392b;
-}
-
-/* Icono placeholder - Reemplazar con tus propios iconos */
-.dev-icon {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-}
-
-/* Estilos para la tabla */
 .dev-table-responsive {
   overflow-x: auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -439,35 +461,6 @@ a{
   background-color: #f9f9f9;
 }
 
-.dev-actions {
-  white-space: nowrap;
-}
-
-/* Indicadores de estado */
-.dev-status {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.dev-status-activo {
-  background-color: #e3fcef;
-  color: #1d9d74;
-}
-
-.dev-status-inactivo {
-  background-color: #feeae6;
-  color: #e74c3c;
-}
-
-.dev-status-mantenimiento {
-  background-color: #fff8e1;
-  color: #f39c12;
-}
-
-/* Estados de carga y error */
 .dev-loading {
   text-align: center;
   padding: 30px;
@@ -475,171 +468,81 @@ a{
   font-style: italic;
 }
 
-.dev-error-message {
-  background-color: #feeae6;
-  color: #e74c3c;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border-left: 4px solid #e74c3c;
-}
+/* Responsive para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap; /* Permite que los elementos del header se acomoden automáticamente */
+    padding: 10px;
+  }
 
-.dev-empty-state {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  color: #7f8c8d;
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-  .dev-header-actions {
-    flex-direction: column;
+  .navbar {
+    flex-direction: column; /* Cambia a diseño vertical */
     align-items: flex-start;
     gap: 10px;
   }
-  
+
+  .dev-header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dev-page-title {
+    font-size: 22px;
+  }
+
   .dev-table th:nth-child(6),
   .dev-table td:nth-child(6) {
-    display: none;
+    display: none; /* Oculta columnas en pantallas más pequeñas */
   }
 }
-.dev-dispositivo-container{
-  margin-top: 100px;
+
+/* Responsive para móviles (smartphones) */
+@media (max-width: 768px) {
+  .header {
+    padding: 5px 10px;
+  }
+
+  .navbar {
+    display: none; /* Oculta la barra de navegación; podrías reemplazar con un menú hamburguesa */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .dev-search-box {
+    flex-direction: column; /* Los elementos de búsqueda se apilan */
+    width: 100%;
+  }
+
+  .dev-table th,
+  .dev-table td {
+    font-size: 12px; /* Reduce tamaño de fuente */
+  }
+
+  .dev-btn {
+    width: 100%; /* Botones ocupan todo el ancho */
+  }
 }
 
-.dev-page-title{
-  color: #010005;
-  font-size: 50px;
+/* Pantallas muy pequeñas (smartphones pequeños) */
+@media (max-width: 480px) {
+  .dev-dispositivo-container {
+    padding: 15px;
+  }
+
+  .dev-page-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .dev-table th,
+  .dev-table td {
+    font-size: 10px;
+    padding: 8px; /* Ajuste adicional para espacio reducido */
+  }
 }
 
-/*excel*/
-.dev-file-upload {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.dev-file-upload input[type="file"] {
-  margin-right: 10px;
-}
-
-.dev-upload-response {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.dev-upload-response h3 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.dev-upload-response p {
-  margin: 5px 0;
-  color: #555;
-}
-
-.dev-upload-response ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.dev-upload-response ul li {
-  background-color: #ffe4e1;
-  border: 1px solid #ffccd5;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  padding: 5px;
-  color: #e60000;
-}
-
-/* componentes edith*/
-.usuario-edit__container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.usuario-edit__form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.usuario-edit__form-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.usuario-edit__form-group {
-  flex: 1;
-  min-width: 250px;
-}
-
-.usuario-edit__form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.usuario-edit__form-input,
-.usuario-edit__form-select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease-in-out;
-}
-
-.usuario-edit__form-input:focus,
-.usuario-edit__form-select:focus {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.usuario-edit__button-container {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.usuario-edit__btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.usuario-edit__btn-primary {
-  background-color: #007bff;
-  color: white;
-}
-
-.usuario-edit__btn-primary:hover {
-  background-color: #0069d9;
-}
-
-.usuario-edit__btn-secondary {
-  background-color: #6c757d;
-  color: white;
-}
-
-.usuario-edit__btn-secondary:hover {
-  background-color: #5a6268;
-}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
@@ -959,5 +862,54 @@ body {
 .dashboard-column:nth-child(3) { animation-delay: 0.3s; }
 .dashboard-column:nth-child(4) { animation-delay: 0.4s; }
 
+.dev-dispositivo-container {
+  margin-top: 100px; /* Ajusta este valor para dar más espacio */
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+/* Estilos básicos para botones */
+.dev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.dev-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botón general */
+.dev-btn {
+  background-color: #3498db; /* Azul */
+  color: white;
+}
+
+.dev-btn:hover {
+  background-color: #2980b9; /* Azul más oscuro al hacer hover */
+}
+
+/* Botón para editar */
+.dev-btn-edit {
+  background-color: #f39c12; /* Naranja */
+  color: white;
+}
+
+.dev-btn-edit:hover {
+  background-color: #e67e22; /* Naranja más oscuro al hacer hover */
+}
 
 

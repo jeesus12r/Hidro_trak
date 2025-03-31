@@ -1,0 +1,247 @@
+import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+
+const RegistroUsuario = () => {
+  // Estados para manejar datos del formulario
+  const [usuario, setUsuario] = useState({
+    nombre: '',
+    email: '',
+    telefono: '',
+    direccion_completa: '',
+    password: '',
+    rolePassword: '',
+    rol: 'usuario'
+  });
+
+  const [dispositivo, setDispositivo] = useState({
+    nombre: '',
+    tipo: '',
+    modelo: '',
+    serie: '',
+    fecha_compra: '',
+    estado: 'activo',
+    notas: ''
+  });
+
+  // Estados para controlar visibilidad de contraseñas
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRolePassword, setShowRolePassword] = useState(false);
+  const [error, setError] = useState('');
+
+  // Manejadores de eventos
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUsuario(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleDispositivoChange = (e) => {
+    const { name, value } = e.target;
+    setDispositivo(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Validación básica
+      if (usuario.password.length < 6) {
+        setError('La contraseña debe tener al menos 6 caracteres');
+        return;
+      }
+      
+      if ((usuario.rol === "admin" || usuario.rol === "tecnico") && !usuario.rolePassword) {
+        setError('La contraseña del rol es requerida');
+        return;
+      }
+
+      // Aquí irían las llamadas a la API para registrar el usuario
+      console.log('Datos de usuario:', usuario);
+      if (usuario.rol === 'usuario') {
+        console.log('Datos de dispositivo:', dispositivo);
+      }
+      
+      // Reiniciar formulario después de envío exitoso
+      setUsuario({
+        nombre: '',
+        email: '',
+        telefono: '',
+        direccion_completa: '',
+        password: '',
+        rolePassword: '',
+        rol: 'usuario'
+      });
+      
+      setDispositivo({
+        nombre: '',
+        tipo: '',
+        modelo: '',
+        serie: '',
+        fecha_compra: '',
+        estado: 'activo',
+        notas: ''
+      });
+      
+      setError('');
+      alert('Usuario registrado correctamente');
+      
+    } catch (err) {
+      setError('Error al registrar usuario: ' + err.message);
+    }
+  };
+
+  const handleCancel = () => {
+    // Función para cancelar y limpiar el formulario
+    setUsuario({
+      nombre: '',
+      email: '',
+      telefono: '',
+      direccion_completa: '',
+      password: '',
+      rolePassword: '',
+      rol: 'usuario'
+    });
+    
+    setDispositivo({
+      nombre: '',
+      tipo: '',
+      modelo: '',
+      serie: '',
+      fecha_compra: '',
+      estado: 'activo',
+      notas: ''
+    });
+    
+    setError('');
+    // Aquí podrías añadir navegación, por ejemplo:
+    // navigate('/');
+  };
+
+  return (
+    <form className="registro-usuario-form" onSubmit={handleSubmit}>
+      <h2>Registro de Usuario</h2>
+      {error && <p className="error-message">{error}</p>}
+      
+      <div className="form-row">
+        <div className="form-column">
+          <label>Nombre</label>
+          <input type="text" name="nombre" value={usuario.nombre} onChange={handleChange} required />
+        </div>
+        <div className="form-column">
+          <label>Email</label>
+          <input type="email" name="email" value={usuario.email} onChange={handleChange} required />
+        </div>
+        <div className="form-column">
+          <label>Teléfono</label>
+          <input type="text" name="telefono" value={usuario.telefono} onChange={handleChange} />
+        </div>
+        <div className="form-column">
+          <label>Dirección</label>
+          <input type="text" name="direccion_completa" value={usuario.direccion_completa} onChange={handleChange} />
+        </div>
+      </div>
+      
+      <div className="form-row">
+        <div className="form-column">
+          <label>Contraseña</label>
+          <div className="password-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={usuario.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="button" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+        </div>
+        
+        <div className="form-column">
+          <label>Rol</label>
+          <select name="rol" value={usuario.rol} onChange={handleChange} required>
+            <option value="usuario">Usuario</option>
+            <option value="admin">Administrador</option>
+            <option value="tecnico">Técnico</option>
+          </select>
+        </div>
+        
+        {(usuario.rol === "admin" || usuario.rol === "tecnico") && (
+          <div className="form-column">
+            <label>Contraseña del Rol</label>
+            <div className="password-container">
+              <input
+                type={showRolePassword ? "text" : "password"}
+                name="rolePassword"
+                value={usuario.rolePassword}
+                onChange={handleChange}
+                required
+              />
+              <button type="button" onClick={() => setShowRolePassword(!showRolePassword)}>
+                {showRolePassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+      
+      {/* Campos adicionales para usuario */}
+      {usuario.rol === "usuario" && (
+        <>
+          <h3>Información del Dispositivo</h3>
+          <div className="form-row">
+            <div className="form-column">
+              <label>Nombre del Dispositivo</label>
+              <input type="text" name="nombre" value={dispositivo.nombre} onChange={handleDispositivoChange} required />
+            </div>
+            <div className="form-column">
+              <label>Tipo</label>
+              <input type="text" name="tipo" value={dispositivo.tipo} onChange={handleDispositivoChange} required />
+            </div>
+            <div className="form-column">
+              <label>Modelo</label>
+              <input type="text" name="modelo" value={dispositivo.modelo} onChange={handleDispositivoChange} />
+            </div>
+            <div className="form-column">
+              <label>N° de Serie</label>
+              <input type="text" name="serie" value={dispositivo.serie} onChange={handleDispositivoChange} />
+            </div>
+          </div>
+          
+          <div className="form-row">
+            <div className="form-column">
+              <label>Fecha de Compra</label>
+              <input type="date" name="fecha_compra" value={dispositivo.fecha_compra} onChange={handleDispositivoChange} />
+            </div>
+            <div className="form-column">
+              <label>Estado</label>
+              <select name="estado" value={dispositivo.estado} onChange={handleDispositivoChange}>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+                <option value="reparacion">En Reparación</option>
+              </select>
+            </div>
+            <div className="form-column">
+              <label>Notas</label>
+              <input type="text" name="notas" value={dispositivo.notas} onChange={handleDispositivoChange} />
+            </div>
+          </div>
+        </>
+      )}
+      
+      <div className="button-container">
+        <button type="submit">Registrar</button>
+        <button type="button" onClick={handleCancel}>Cancelar</button>
+      </div>
+    </form>
+  );
+};
+
+export default RegistroUsuario;
